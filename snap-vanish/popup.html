@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <h1>Snap Vanish</h1>
+    <label class="switch" title="Turn Snap Vanish on or off">
+      <input type="checkbox" id="enabled"><span class="track"></span>
+    </label>
+  </header>
+
+  <button id="snap" type="button">Snap now</button>
+  <p id="state" class="state"></p>
+
+  <div class="row">
+    <label for="sens">Snap sensitivity</label><output id="sensOut"></output>
+    <input type="range" id="sens" min="1" max="10" step="1">
+  </div>
+  <div class="row">
+    <label for="dur">Dust duration</label><output id="durOut"></output>
+    <input type="range" id="dur" min="1" max="8" step="0.5">
+  </div>
+  <div class="row">
+    <label for="dir">Dust direction</label>
+    <select id="dir">
+      <option value="right">Blow right</option>
+      <option value="left">Blow left</option>
+      <option value="up">Rise up</option>
+      <option value="down">Fall down</option>
+      <option value="burst">Burst outward</option>
+    </select>
+  </div>
+  <label class="check"><input type="checkbox" id="ai"> AI room fill (needs the LaMa model)</label>
+
+  <dl id="info"></dl>
+  <p class="hint">Shortcut: <b id="key">not set</b>. Change it at chrome://extensions/shortcuts. After turning the switch on, reload the call tab.</p>
+  <script src="popup.js"></script>
+</body>
+</html>
